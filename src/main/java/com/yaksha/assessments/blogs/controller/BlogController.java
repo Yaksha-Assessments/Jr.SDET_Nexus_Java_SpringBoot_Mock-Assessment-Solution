@@ -55,7 +55,7 @@ public class BlogController {
         return new ResponseEntity<>(deleted, HttpStatus.OK);
 	}
 
-	@GetMapping("/all")
+	@GetMapping
 	public ResponseEntity<List<BlogEntity>> getAllBlogs() {
 		// write your logic here
 		List<BlogEntity> blogs = blogService.findAll();
