@@ -217,7 +217,7 @@ public class BlogControllerTest {
 		List<BlogEntity> blogs = MasterData.getBlogEntityList();
 
 		when(this.blogService.findAll()).thenReturn(blogs);
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/blogs/all")
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/blogs")
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
@@ -241,7 +241,7 @@ public class BlogControllerTest {
 				return blogs;
 			}
 		});
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/blogs/all")
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/blogs")
 				.contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
